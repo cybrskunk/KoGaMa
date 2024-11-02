@@ -1,5 +1,5 @@
-# KoGaMaPlexSpace
-A KoGaMa PlexSpace with comfy yellow hue. <br> 
+# PlexSpace: A KoGaMa Website Theme
+A KoGaMa theme with comfy yellow hue. <br> 
 
  [<img src="Theme/btn.png" width="200"/>](https://github.com/grimbbg/KoGaMaPlexSpace/raw/refs/heads/main/Theme/PlexSpace.user.js) 
 
