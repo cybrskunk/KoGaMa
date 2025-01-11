@@ -49,6 +49,8 @@ Credits for these crosshair goes to ***Sorry*** & ***Snowie***
 
 After picking, or creating a crosshair that you genuinely like the design of, you'll need to grab [***nesrak1/UABEA***](https://github.com/nesrak1/UABEA) to implement our crosshair within the `.assets` file.
 
+For further steps and sanity of us both, please go ahead and watch [***this scuffed guide***](https://www.youtube.com/watch?v=nFAL97LQGKk)
+
 
 
 
