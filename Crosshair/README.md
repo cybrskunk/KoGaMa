@@ -1,8 +1,8 @@
 # Setting up
-These crosshairs are meant to be used for ***Standalone Launcher***, which you can either [***install with my tool***](https://github.com/absurdic/KoGaMa/blob/main/Exploits/LauncherInstaller.bat) or download yourself. <br>
+These crosshairs are meant to be used for ***Standalone Launcher***, which you can either [***install with my tool***](https://github.com/archfrajer/KoGaMa/blob/main/Exploits/LauncherInstaller.bat) or download yourself. <br>
 Resolutions of these crosshairs are ***128x128*** each for compatibility.
 
-After conducting the first step and installing launcher for kogama, pick the crosshair you like most from [***my collection***](https://github.com/absurdic/KoGaMa/tree/main/Crosshair/Crosshairs) or make your own that fits the proper resolution. <br>
+After conducting the first step and installing launcher for kogama, pick the crosshair you like most from [***my collection***](https://github.com/archfrajer/KoGaMa/tree/main/Crosshair/Crosshairs) or make your own that fits the proper resolution. <br>
 
 <details>
 <summary>Preview Crosshairs</summary>
