@@ -1,0 +1,647 @@
+               /* Main Site View */
+
+/* Background Image | Position | Hght  */
+#content-container{
+  background-image: url("https://wallpaperaccess.com/full/17494.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+
+/*Profile Frame*/
+.UA3TP ._11RkC {
+    stroke: #333;
+    fill: transparent;
+    stroke-width: 0px;
+}
+/* Join date */ 
+#mobile-page #profile-page .section-top .profile-meta .profile-created-date {
+    float: left;
+    padding: 400px;
+    color: rgba(235, 52, 88);
+    font-size: 80%;
+}
+/* Description + Creations Properties */
+#mobile-page #profile-page section.creations-custom .section-description .description-container .header {
+		border: double;
+		border-radius: 25px;
+}
+#mobile-page #profile-page section.creations-custom .section-description .description-container .text {
+	font-size: .90rem;
+}
+#mobile-page #profile-page .creations-feed section.creations-custom {
+    margin-right: 0px;
+}
+
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item .display-image {
+	padding-top: 0%;
+	background-size: cover;
+	
+}
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item .caption-container {
+	border-radius: 25px;
+}
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item .creation-stats {
+	display: none;
+}
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item .caption-container {
+	height: 0px;
+}
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item.empty .display-container .inner {
+	display: none;
+}
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item.empty .display-container {
+	padding-top: 0%;
+}
+.icon-cubeforce-fix:before {
+	display: none;
+}
+.icon-vintage-robot:before {
+	display: none;
+}
+
+
+/* Profile GUI & Friendlist stuff */
+
+
+  /*Notifications*/
+.menu-icon {
+    width: 14px
+}
+#root-page-mobile #header-notify-toggle #notify .container .sections-container{
+		 background-image: url("https://wallpaperaccess.com/full/233593.jpg")
+		 
+}
+#root-page-mobile #header-notify-toggle #notify .container {
+    padding: 0;
+    margin-left: -400px;
+	position: absolute;
+    top: 30px;
+    right: 30px;
+    left: 30px;
+    bottom: 30px;
+}
+#root-page-mobile #header-notify-toggle #notify .container .sections-container {
+	height: 300px;
+	width: 150;
+}
+
+#root-page-mobile #header-notify-toggle #notify .container .exit {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: inherit;
+    z-index: 3
+}
+
+#root-page-mobile #header-notify-toggle #notify .container .exit a {
+    border: none;
+    line-height: 20px;
+    font-size: 14px
+}
+
+/* Gradient Username */
+
+
+
+
+/* Useless stuff */
+._3TORb {
+	background-color: transparent;
+}
+	
+._3TORb ._2E1AL {
+    display: flex;
+    padding: 2em;
+    border-bottom: none;
+}
+._3TORb ._2E1AL ._4RanE {
+    flex: 0;
+}
+._3TORb ._1Yhgq, ._3TORb ._3iXbw {
+	background-color: transparent;
+}
+.xp-bar .xp-text {
+	display: none;
+}
+.xp-bar .progress {
+	display: none;
+}
+[class*=" icon-"]:before, [class^=icon-]:before {
+		margin-right: 1.2em;
+		
+}
+
+#root-page-mobile #header-notify-toggle #notify .container .exit {
+		position: absolute;
+    top: 10px;
+    right: 5px;
+    background-color: inherit;
+    z-index: 3;
+}
+body#root-page-mobile header#pageheader #meta-nav>li.profile-credits .xp-level a {
+	width: 40px;
+}
+body#root-page-mobile header#pageheader #meta-nav>li.profile-notify .header-icon-count {
+	background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    font-size: .625rem;
+    padding: 0 3px;
+    margin-top: 3px;
+    border-radius: 2px;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    will-change: box-shadow;
+    -webkit-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%);
+    z-index: 1;
+}
+
+
+
+/* hover friendlist */
+._1Yhgq {min-width: unset;position: absolute; right:0;}
+._1Yhgq {max-width: 65px;min-width: 65px;transition: 0.5s ease;}
+._1Yhgq:hover {max-width: 240px;min-width: 240px;transition: 0.5s ease;}
+ }
+
+ 
+               /* Feed */
+
+/* Feed | Post Button  */
+#profile-status-update .button-wrapper button {
+    height: 100%;
+    width: 100%;
+	color: transparent;
+    background-color: #73578a;
+}
+/* Feed | Post Text Field  */
+#profile-status-update form.status-message textarea {
+    height: 50px;
+    background-color: transparent;
+	border: double;
+	border-color: #a28db3;
+}
+/* Feed | Post properties */
+#profile-news-feed ul.news-feed-thumbs>li.item .feed-header .feed-text .user {
+    color: #beadcc;
+    font-size: 1rem;
+    
+} 
+#profile-news-feed ul.news-feed-thumbs>li.item.status_updated .feed-item .status-message,#profile-news-feed ul.news-feed-thumbs>li.item.wall_post .feed-item .status-message {
+    word-wrap: break-word;
+    word-break: break-all;
+    clear: left;
+    padding: 0 10px;
+    font-size: 105%;  
+    color: rgb(180,165,209);
+}
+#root-page-mobile .comments li .header {
+	    display: block;
+    padding-bottom: 0px;
+}
+#root-page-mobile #profile-news-feed .feed-comments .comments ul.comment-list li .body {
+	color: #946de3;
+}
+#root-page-mobile #profile-news-feed .feed-comments .comments ul.comment-list li .header .username a {
+    color: #beadcc;
+}
+#profile-news-feed ul.news-feed-thumbs>li.item {
+    padding: 0 0px 0px;
+    position: relative;
+    background-color: transparent;
+    color: rgba(0,0,0,.67);
+    margin-bottom: 1rem;
+    border: double;
+    border-radius: 25px;
+}
+#root-page-mobile #profile-news-feed .feed-comments .comments form textarea {
+	background-color: transparent;
+	border: double;
+}
+#root-page-mobile #profile-news-feed .feed-comments .comments form button {
+	color: transparent;
+    background-color: #73578a;
+}
+/*avatarpage*/
+#mobile-page #profile-avatar-list .avatar-list .item .avatar-image {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    padding: 20px; 
+    width: 240px;
+    height: 350px;  
+}
+#mobile-page #profile-avatar-list section.create-avatar-info .call-to-action {
+		padding: 0px;
+		color: transparent;
+		background-color: #77629e;
+	
+}
+#mobile-page #profile-avatar-list .avatar-list .item .set-active {
+    border-radius: 25px;
+    padding: 20px; 
+    width: 250px;
+    height: 50px; 
+}
+.pure-button-success, a.pure-button-success {
+    color: #fff;
+    background-color: #ffffff5e;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+}
+
+#mobile-page #profile-avatar-list section.create-avatar-info {
+    background-color: #2196f300;
+    background-image: -webkit-linear-gradient(45deg,#51adf600 25%,transparent 0,transparent 50%,#51adf600 0,#51adf600 75%,transparent 0,transparent);
+    background-image: -o-linear-gradient(45deg,#51adf6 25%,transparent 25%,transparent 50%,#51adf6 50%,#51adf6 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,#51adf600 25%,transparent 0,transparent 50%,#51adf600 0,#51adf600 75%,transparent 0,transparent);
+    padding: 10px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 3px -2px rgb(0 0 0 / 0%);
+    box-shadow: 0 3px 3px -2pxrgba(0,0,0,.47);
+    padding: 20px 16px;
+    margin: 10px 10px 16px;
+}
+
+#mobile-page #profile-avatar-list section.create-avatar-info .call-to-action, #mobile-page #profile-avatar-list section.create-avatar-info .signup-button {
+    float: right;
+    border-radius: 25px;
+    padding: 20px; 
+}
+
+
+
+/* Getting rid of pointless stuff  */
+
+footer #footer-about  {
+	display: none;
+	
+}
+
+footer #footer-header {
+	display: none;
+}
+
+footer #footer-links {
+	display: none;
+}
+footer #footer-company {
+	display: none;
+}
+body#root-page-mobile header#pageheader .logo .logo-image {
+    display: none;
+}
+#mobile-page #profile-page .section-top .progression .level {
+   display: none;
+}
+
+/* Profile Progression  padding | Font   */
+	   /* gold */
+	#mobile-page #profile-page .section-top .progression .gold {
+    padding: 2 0 0 50.1rem;
+	}
+	/* friends */
+	#mobile-page #profile-page .section-top .progression .friends {
+    padding: 0 0 0 50.475rem;
+    
+	}
+	/* Ranking */
+	#mobile-page #profile-page .section-top .progression .rank {
+     padding: 0 0 0 50.475rem;
+}
+
+#mobile-page #profile-page .section-top .profile-badges .profile-badge-list {
+    position: absolute;
+    margin-left: 40px;
+    margin-bottom: 10px
+}
+
+#mobile-page #profile-page .section-top .profile-badges .profile-badge-list {
+    position: relative;
+    margin-left: 1040px;
+}
+#mobile-page #profile-page .section-top .progression {
+padding-left: 0px;
+}
+
+/* Font Size & Margin */
+#mobile-page #profile-page .section-top .progression .progression-item {
+    font-size: 130%;
+	margin-top: 20px;
+}
+
+
+
+
+
+
+/* Categories  */
+	
+
+	/* Do Not Display Icons */
+
+body#root-page-mobile header#pageheader nav.menu>ol>li a i {
+	display: none;
+	
+	/* Font | Position | Padding | Color  */
+	
+}
+body#root-page-mobile header#pageheader nav.menu>ol>li a {
+    display: block;
+    line-height: 20px;
+    padding: 14px 80px;
+    font-size: 1.1rem;
+    text-transform: none;
+    color: #ac78d6;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+}
+.text-gold {
+    color: #ac78d6!important;
+}
+
+
+
+body#root-page-mobile header#pageheader #meta-nav {
+	background-color: transparent;
+}
+
+
+
+
+
+
+
+
+/*Shop stuff*/
+
+#mobile-page .content-shop .shop-list .shop-item a {
+    color: #ffffff;
+    display: inline;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+    box-shadow: 0 2px 6pxrgba(0,0,0,.3);
+}
+
+#mobile-page .content-shop .shop-list .shop-item .shop-image {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+}
+
+#mobile-page .content-shop .shop-list .shop-item .shop-name {
+    font-size: 1rem;
+    text-shadow: 0px 0px 3px;
+
+}
+
+#mobile-page .carousel header .help-popup-manager .help-label .text {
+    cursor: pointer;
+    font-size: .813rem;
+    padding: 5px 4px;
+    border-radius: 12px;
+    font-weight: 700;
+    background-color: #ffffff3b;
+    color: #fff;
+}
+
+#mobile-page .content-shop .shop-list .shop-item .shop-price {
+    position: absolute;
+    bottom: 25px;
+    right: 10px;
+    left: 0;
+    padding: 0 10px;
+    background-color: rgb(0 0 0 / 0%);
+    display: none;
+    font-family: Open Sans,sans-serif;
+    font-weight: 700;
+    font-size: .875rem;
+    color: #ffc10700;
+    line-height: 40px;
+    height: 40px;
+}
+
+#mobile-page .carousel header .help-popup-manager .help-container .modal-content {
+    background-color: #00000030;
+    color: hsla(0,0%,100%,.73);
+    padding: 5px 4px;
+    border-radius: 12px;
+}
+
+.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {
+    color: #fff;
+    background-color: #ffffff33;
+    margin-bottom: 0rem;
+    border-radius: 9px;
+}
+.icon-lock:before {
+	display: none;
+}
+.pure-button-primary {
+	background-color: #704c85 ;
+	box-shadow: none;
+	
+}
+.payment-shopping-basket .sub-total .h2 {
+    color: transparent;
+
+}
+#mobile-page #product-detail #product-purchase-link .purchase-button {
+	border-radius: 25px;
+}
+#mobile-page #profile-page section.creations-custom .creation-list .creation-item .caption-container {
+    bottom: -80px;
+    height: 81px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 25px
+}
+
+#mobile-page #product-detail #product-purchase-link {
+    text-align: center;
+    margin-top: -42px;
+    overflow: hidden;
+}
+.pure-form input[type=color], .pure-form input[type=date], .pure-form input[type=datetime-local], .pure-form input[type=datetime], .pure-form input[type=email], .pure-form input[type=month], .pure-form input[type=number], .pure-form input[type=password], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=text], .pure-form input[type=time], .pure-form input[type=url], .pure-form input[type=week], .pure-form select, .pure-form textarea {
+	
+	border: double;
+	border-color: #a28db3;
+	background-color: transparent;
+}
+
+#mobile-page #product-detail .product-purchase .product-image-avatar {
+	border-radius: 25px;
+	box-shadow: none;
+}
+#mobile-page #product-detail header.product-header h1 {
+	margin: 60px 40px 40px;
+	color: hsla(278, 27%, 32%);
+}
+.pure-button-secondary, a.pure-button-secondary {
+	background-color: transparent;
+	color: rgba(147, 109, 171);
+	text-shadow: none;
+	font-size: 86%;
+	
+}
+/*comment*/ 
+
+#root-page-mobile .comments li .body {
+    position: relative;
+    display: block;
+    padding: 10px 14px;
+    color: #000000;
+    background: #ccd1d900;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 15px;
+    -o-border-radius: 2px;
+    -webkit-box-shadow: 0 2px 1px rgb(11 12 15 / 0%);
+    box-shadow: 0 2px 1pxrgba(11,12,15,.3);
+}
+
+#root-page-mobile .comments li .body .arrow-left {
+    border-color: transparent #ccd1d9 transparent transparent;
+    left: -15px;
+}
+#root-page-mobile .comments li .body .arrow-left, #root-page-mobile .comments li .body .arrow-left-border {
+    border-style: none;
+    border-width: 8px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 10px;
+}
+
+.pure-form input[type=color], .pure-form input[type=date], .pure-form input[type=datetime-local], .pure-form input[type=datetime], .pure-form input[type=email], .pure-form input[type=month], .pure-form input[type=number], .pure-form input[type=password], .pure-form input[type=search], .pure-form input[type=tel], .pure-form input[type=text], .pure-form input[type=time], .pure-form input[type=url], .pure-form input[type=week], .pure-form select, .pure-form textarea {
+    padding: 0.45em 0.5em;
+    display: inline-block;
+    border: none;
+    border-radius: 1px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 16px;
+    -o-border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 3px rgb(80 80 80 / 10%);
+    box-shadow: inset 0 1px 3px rgb(80 80 80 / 10%);
+    -webkit-transition: border .3s linear;
+    -o-transition: .3s linear border;
+    transition: border .3s linear;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #f8f8f85c;
+}
+#root-page-mobile .comments li .header .username a {
+	color: #825a9c;
+	padding-right: 400px;
+}
+#root-page-mobile .comments li .text {
+	color: #ba94d1;
+}
+#mobile-page #product-detail .product-purchase .product-image {
+	border-radius: 25px;
+	box-shadow: none;
+}
+
+#mobile-page #product-detail #product-purchase-link #purchase-confirm-container .modal-content {
+	background-color: transparent;
+}
+#mobile-page #product-detail #product-purchase-link #purchase-confirm-container .modal-content .transaction-message {
+	color: #8e6a9e;
+}
+
+/* Account settings */
+
+body#root-page-mobile header#pageheader #profile-extended {
+	display: none;
+    position: fixed;
+    top: 48px;
+    right: 0;
+    z-index: 1012;
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    min-height: 200px;
+    background-color: transparent;
+    -webkit-box-shadow: -4px 7px 10px rgb(0 0 0 / 30%);
+    box-shadow: -4px 7px 10px rgb(0 0 0 / 30%);
+    overflow-y: auto;
+}
+
+body#root-page-mobile header#pageheader #profile-extended .user-credits .xp-level a .level-image {
+	display: none;
+}
+	body#root-page-mobile header#pageheader #profile-extended .user-credits .xp-level {
+		display: none;
+	}
+body#root-page-mobile header#pageheader #profile-extended .user-credits .gold .data, body#root-page-mobile header#pageheader #profile-extended .user-credits .silver .data {
+	background-color: transparent;
+    display: block;
+    margin: 10px 100 0px 0px;
+    border-radius: 7px 5px 5px 7px;
+    text-align: center;
+    color: #ff0055;
+}
+body#root-page-mobile header#pageheader #profile-extended .username {
+	background-color: transparent;
+}
+
+body#root-page-mobile header#pageheader #profile-extended .user-credits {
+	background-color: transparent;
+}
+
+body#root-page-mobile header#pageheader #profile-extended .profile-links .arrow-top {
+	display: none;
+}
+
+/* Chat box */
+
+._375XK ._2XaOw {
+	padding: 0em;
+	
+}
+
+.zUJzi .o_DA6 .uwn5j {
+	    position: relative;
+    height: 100%;
+    border-right: 1px solid #5c343c;
+    padding: 0;
+}
+.zUJzi .o_DA6 .uwn5j ._3DYYr._2dPu4 {
+    border-left: 2px solid #db4865;
+}
+
+._2XaOw {
+background: #23272A;
+}
+.uwn5j {
+	background: #23272A;
+}
+.F3PyX {
+	background: #23272A;
+}
+
+._375XK textarea {
+	background-color: rgba(79, 70, 72);
+}
+
+._375XK ._2XaOw ._1j2Cd p {
+	background-color: #665570;
+	border-radius: 25px;
+	
+}
+
+._375XK ._2XaOw ._1j2Cd._1Xzzq p {
+	background-color: hsl(327, 21%, 40%);
+}
