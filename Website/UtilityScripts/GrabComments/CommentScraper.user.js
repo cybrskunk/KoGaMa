@@ -263,7 +263,6 @@
       let currentFileData = generateMetadata();
       let currentFileSize = 0;
       let fileCount = 1;
-      a;
 
       let fileDataBuffer = currentFileData + formattedData;
 
