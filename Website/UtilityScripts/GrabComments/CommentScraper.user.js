@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Comment Scraper
-// @namespace    discord.gg/@simonvhs
-// @version      1.9
-// @description  MacOS like comment scrape into discord webhook
+// @namespace    discord.gg/@-------
+// @version      4
+// @description  I just want a fast way of checking comments to find stuff....
 // @author       Simon (dork)
 // @match        https://www.kogama.com/games/play/*
 // @grant        none
@@ -15,6 +15,8 @@
   let processedRequests = 0;
   let totalPages = 0;
   let isMenuVisible = true;
+  let filterOutText = "";
+  let separateURLs = false;
 
   const extractGameIdFromUrl = () => {
     const match = window.location.pathname.match(/\/games\/play\/([^/]+)\//);
@@ -29,111 +31,177 @@
   const createMenu = () => {
     const style = document.createElement("style");
     style.innerHTML = `
-            #u7465 {
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                width: 280px;
-                background: #fff;
-                color: #333;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-                z-index: 9999;
-                transition: all 0.3s ease;
-                display: block;
-                padding: 20px;
-            }
-            #u7465 .top-bar {
-                height: 30px;
-                background: #f1f1f1;
-                border-top-left-radius: 12px;
-                border-top-right-radius: 12px;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                padding: 0 10px;
-                cursor: move;
-            }
-            #u7465 .top-bar .button {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background-color: #ff5f57;
-                margin-right: 6px;
-                cursor: pointer;
-            }
-            #u7465 .top-bar .minimize {
-                background-color: #ffbd2e;
-            }
-            #u7465 .top-bar .close {
-                background-color: #ff5f57;
-            }
-            #u7465 .top-bar .maximize {
-                background-color: #27c93f;
-            }
-            #u7465 .top-bar .button:hover {
-                opacity: 0.7;
-            }
-            #u7465 h1 {
-                font-size: 18px;
-                margin: 10px;
-                color: #333;
-                text-align: center;
-                font-weight: 600;
-            }
-            #u7465 input, #u7465 button {
-                width: calc(100% - 20px);
-                padding: 10px;
-                margin: 8px 0;
-                border-radius: 8px;
-                border: 1px solid #ddd;
-                box-sizing: border-box;
-                background-color: #f9f9f9;
-                font-size: 14px;
-                color: #333;
-            }
-            #u7465 input:focus, #u7465 button:focus {
-                outline: none;
-                border-color: #007aff;
-            }
-            #u7465 button {
-                background: linear-gradient(45deg, #ff79c6, #ff9a8b, #9b59b6);
-                color: white;
-                cursor: pointer;
-                transition: transform 0.2s, background-color 0.2s;
-                border: none;
-            }
-            #u7465 button:hover {
-                transform: scale(1.05);
-                background-color: #d45e9b;
-            }
-            #u7465 button:active {
-                background-color: #c34b7a;
-            }
-            #u7465 #progress {
-                font-size: 14px;
-                text-align: center;
-                margin-top: 10px;
-                color: #555;
-            }
-        `;
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+      #hypr-scraper {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 300px;
+        background: rgba(30, 30, 46, 0.9);
+        color: #cdd6f4;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        font-family: 'Fira Code', monospace;
+        z-index: 9999;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(108, 112, 134, 0.2);
+      }
+
+      #hypr-scraper .title-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(108, 112, 134, 0.3);
+      }
+
+      #hypr-scraper .title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #89b4fa;
+      }
+
+      #hypr-scraper .controls {
+        display: flex;
+        gap: 8px;
+      }
+
+      #hypr-scraper .control-btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      #hypr-scraper .close-btn {
+        background-color: #f38ba8;
+      }
+
+      #hypr-scraper .min-btn {
+        background-color: #f9e2af;
+      }
+
+      #hypr-scraper .max-btn {
+        background-color: #a6e3a1;
+      }
+
+      #hypr-scraper .control-btn:hover {
+        transform: scale(1.1);
+      }
+
+      #hypr-scraper input, #hypr-scraper button, #hypr-scraper select {
+        width: 100%;
+        padding: 10px 12px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: none;
+        box-sizing: border-box;
+        font-family: 'Fira Code', monospace;
+        font-size: 13px;
+        transition: all 0.2s ease;
+      }
+
+      #hypr-scraper input, #hypr-scraper select {
+        background: rgba(49, 50, 68, 0.8);
+        color: #cdd6f4;
+        border: 1px solid rgba(108, 112, 134, 0.3);
+      }
+
+      #hypr-scraper input:focus, #hypr-scraper select:focus {
+        outline: none;
+        border-color: #89b4fa;
+        box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.2);
+      }
+
+      #hypr-scraper input::placeholder {
+        color: #6c7086;
+      }
+
+      #hypr-scraper button {
+        background: linear-gradient(135deg, #89b4fa 0%, #74c7ec 100%);
+        color: #1e1e2e;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+      }
+
+      #hypr-scraper button:hover {
+        background: linear-gradient(135deg, #89b4fa 0%, #94e2d5 100%);
+        transform: translateY(-1px);
+      }
+
+      #hypr-scraper button:active {
+        transform: translateY(0);
+      }
+
+      #hypr-scraper #progress {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 15px;
+        color: #a6adc8;
+        font-family: 'Fira Code', monospace;
+      }
+
+      #hypr-scraper .status {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+        background: #6c7086;
+      }
+
+      #hypr-scraper .status.active {
+        background: #a6e3a1;
+        box-shadow: 0 0 5px #a6e3a1;
+      }
+
+      #hypr-scraper .select-wrapper {
+        position: relative;
+      }
+
+      #hypr-scraper .select-wrapper::after {
+        content: "▼";
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        color: #6c7086;
+        pointer-events: none;
+        font-size: 10px;
+      }
+    `;
     document.head.appendChild(style);
 
     const menu = document.createElement("div");
-    menu.id = "u7465";
+    menu.id = "hypr-scraper";
     menu.innerHTML = `
-            <div class="top-bar">
-                <div class="button close"></div>
-                <div class="button minimize"></div>
-                <div class="button maximize"></div>
-            </div>
-            <h1>Comment Scraper</h1>
-            <input id="webhook-url" type="text" placeholder="Webhook URL">
-            <input id="total-pages" type="number" placeholder="Total Pages">
-            <button id="start-button">Start Scraping</button>
-            <div id="progress">Progress: 0 / 0</div>
-        `;
+      <div class="title-bar">
+        <div class="title">Comment Scraper</div>
+        <div class="controls">
+          <div class="control-btn min-btn" title="Minimize"></div>
+          <div class="control-btn max-btn" title="Maximize"></div>
+          <div class="control-btn close-btn" title="Close"></div>
+        </div>
+      </div>
+      <input id="webhook-url" type="text" placeholder="Webhook URL">
+      <input id="filter-out" type="text" placeholder="Filter out text (case sensitive)">
+      <input id="total-pages" type="number" placeholder="Total Pages">
+      <div class="select-wrapper">
+        <select id="url-separation">
+          <option value="no">Don't separate URLs</option>
+          <option value="yes">Separate URLs to another file</option>
+        </select>
+      </div>
+      <button id="start-button">Start Scraping</button>
+      <div id="progress"><span class="status"></span> Ready</div>
+    `;
     document.body.appendChild(menu);
 
     makeDraggable(menu);
@@ -143,16 +211,24 @@
       updateProgress();
     });
 
+    document.getElementById("filter-out").addEventListener("input", (e) => {
+      filterOutText = e.target.value;
+    });
+
+    document.getElementById("url-separation").addEventListener("change", (e) => {
+      separateURLs = e.target.value === "yes";
+    });
+
     document
-      .querySelector(".close")
+      .querySelector(".close-btn")
       .addEventListener("click", () => toggleMenuVisibility(false));
     document
-      .querySelector(".minimize")
+      .querySelector(".min-btn")
       .addEventListener("click", () => toggleMenuVisibility(true));
   };
 
   const toggleMenuVisibility = (isVisible) => {
-    const menu = document.getElementById("u7465");
+    const menu = document.getElementById("hypr-scraper");
     menu.style.display = isVisible ? "block" : "none";
     isMenuVisible = isVisible;
   };
@@ -163,8 +239,8 @@
       startY,
       initialX,
       initialY;
-    const topBar = element.querySelector(".top-bar");
-    topBar.addEventListener("mousedown", (e) => {
+    const titleBar = element.querySelector(".title-bar");
+    titleBar.addEventListener("mousedown", (e) => {
       isDragging = true;
       startX = e.clientX;
       startY = e.clientY;
@@ -223,17 +299,44 @@
     return `[${createdAt}] ${comment.profile_username} (${comment.profile_id}): ${content}`;
   };
 
-  const generateMetadata = () => {
+  const generateMetadata = (type = "all") => {
     const date = new Date().toLocaleString();
     const gameId = extractGameIdFromUrl();
-    return `Date: ${date}\nGame ID: ${gameId}\nTotal Pages: ${totalPages}\n\n▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃\n\n `;
+    let header = `Date: ${date}\nGame ID: ${gameId}\nTotal Pages: ${totalPages}\nFilter (Ignored): ${filterOutText || "None"}\n`;
+
+    if (type === "urls") {
+      header += "File Type: URL-only comments\n";
+    } else {
+      header += "File Type: All comments\n";
+    }
+
+    return header + "\n▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃\n\n";
   };
 
   const updateProgress = () => {
-    const progressText = `${processedRequests} / ${totalPages}`;
-    document.getElementById(
-      "progress"
-    ).textContent = `Progress: ${progressText}`;
+    const progressElement = document.getElementById("progress");
+    const statusElement = progressElement.querySelector(".status");
+
+    if (processedRequests > 0 && processedRequests < totalPages) {
+      progressElement.innerHTML = `<span class="status active"></span> Processing: ${processedRequests}/${totalPages}`;
+    } else if (processedRequests >= totalPages && totalPages > 0) {
+      progressElement.innerHTML = `<span class="status"></span> Completed: ${processedRequests}/${totalPages}`;
+    } else {
+      progressElement.innerHTML = `<span class="status"></span> Ready`;
+    }
+  };
+
+  const shouldFilterComment = (comment) => {
+    if (!filterOutText) return false;
+    const content = JSON.parse(comment._data).data || "";
+    return content.includes(filterOutText);
+  };
+
+  const containsURL = (comment) => {
+    const content = JSON.parse(comment._data).data || "";
+    // Regex to match URLs with or without protocol, www, etc.
+    const urlRegex = /(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?/;
+    return urlRegex.test(content);
   };
 
   const processAllComments = async (webhookUrl) => {
@@ -249,40 +352,39 @@
     try {
       const allPageResults = await Promise.all(fetchPromises);
       let allComments = [];
+      let urlComments = [];
+
       allPageResults.forEach((result) => {
         if (result.data) {
           allComments = allComments.concat(result.data);
         }
       });
 
-      allComments.sort((a, b) => new Date(b.created) - new Date(a.created));
-
-      const formattedData = allComments.map(formatCommentData).join("\n");
-      const totalComments = formattedData.split("\n").length;
-
-      let currentFileData = generateMetadata();
-      let currentFileSize = 0;
-      let fileCount = 1;
-
-      let fileDataBuffer = currentFileData + formattedData;
-
-      if (new Blob([fileDataBuffer]).size > MAX_FILE_SIZE) {
-        const gameTitle = extractGameTitle().replace(/[\/\\?%*:|"<>]/g, "_");
-        await sendFileToWebhook(
-          webhookUrl,
-          fileDataBuffer,
-          `${gameTitle}_comments_${fileCount}.txt`
-        );
-        fileCount++;
-        fileDataBuffer = formattedData;
+      allComments = allComments.filter(comment => !shouldFilterComment(comment));
+      if (separateURLs) {
+        urlComments = allComments.filter(comment => containsURL(comment));
+        allComments = allComments.filter(comment => !containsURL(comment));
       }
 
-      if (fileDataBuffer) {
-        const gameTitle = extractGameTitle().replace(/[\/\\?%*:|"<>]/g, "_");
+      allComments.sort((a, b) => new Date(b.created) - new Date(a.created));
+      urlComments.sort((a, b) => new Date(b.created) - new Date(a.created));
+
+      const formattedData = allComments.map(formatCommentData).join("\n");
+      const formattedURLData = urlComments.map(formatCommentData).join("\n");
+
+      const gameTitle = extractGameTitle().replace(/[\/\\?%*:|"<>]/g, "_");
+      if (formattedData) {
         await sendFileToWebhook(
           webhookUrl,
-          fileDataBuffer,
-          `${gameTitle}_comments_${fileCount}.txt`
+          generateMetadata("all") + formattedData,
+          `${gameTitle}_comments.txt`
+        );
+      }
+      if (separateURLs && formattedURLData) {
+        await sendFileToWebhook(
+          webhookUrl,
+          generateMetadata("urls") + formattedURLData,
+          `${gameTitle}_url_comments.txt`
         );
       }
 
