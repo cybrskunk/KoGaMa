@@ -1,14 +1,12 @@
-# 4TH AUGUST 2024: UPDATE.
-Due to the recent spike of activity in skidded stealers, my sample has been taken down. It was meant as an educational project, not a tool to be overshared and used for harm.  
-The specific sample is the property of DVRKZ.
+# Update V3
 
-People who were seen using my sample to cause harm:  
-- bialasss
-- Inversion
-- Foshon
-- and a few different players who will not be named here. Giving you attention is not worth it. :) 
+As of September 22nd, 2025 I have officially given up on continuing the legacy of KoGaMa-Related contributions on my side. All files, those that I held private for my group of friends, as well as the unpublished releases are stored in here from today. Greetings from Simon and the entirety of DVRKZ.
 
-## Check my other repos!
 
-[UtilifyV2](https://github.com/cybrskunk/Utilify)  - utility addon meaning to boost the experience on website.  
-[PreventStealerV2](https://github.com/cybrskunk/PreventStealer)  - addon specifically made to help testing out waters whether another website-addon is malicious.
+
+~~##Update~~
+~~4TH AUGUST 2024: UPDATE.~~
+~~Due to the recent spike of activity in skidded stealers, my sample has been taken down. It was meant as an educational project, not a tool to be overshared and used for harm.  
+The specific sample is the property of DVRKZ.~~
+
+
